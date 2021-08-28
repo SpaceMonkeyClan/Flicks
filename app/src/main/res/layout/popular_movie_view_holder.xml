@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Use layout tag to implement data binding -->
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Used FrameLayout to create the overlay. Reference from https://stackoverflow.com/questions/5690836/how-to-overlay-an-icon-image-on-top-of-an-exisiting-view -->
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivPoster"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            tools:srcCompat="@tools:sample/avatars"
+            android:adjustViewBounds="true" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@+id/ivPoster"
+            android:transitionName="title_transition" />
+
+        <!-- Here is for the overlay -->
+
+        <!-- Code for Stretch Story 3 -->
+        <!-- Here we are adding a play icon overlay to popular movies to indicate that the movie can be played -->
+        <!-- Here play icon that will go over the movie poster -->
+        <ImageView
+            android:id="@+id/ivPlayIcon"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            app:srcCompat="@android:drawable/ic_media_play" />
+
+    </RelativeLayout>
+</layout>
